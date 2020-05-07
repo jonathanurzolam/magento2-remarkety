@@ -1,0 +1,82 @@
+<form class="form-address-edit" data-mage-init='{"validation": {}}' action="<?php echo $block->getFormUrl(); ?>" method="post" id="customer_data" name="customer_data" enctype="multipart/form-data" data-hasrequired="* Required Fields">
+    <fieldset class="fieldset create info">
+        <legend class="legend"><span>Información Personal</span></legend><br>
+        <input name="form_key" type="hidden" value="<?php echo $block->getFormKey(); ?>" wfd-invisible="true">
+        <input type="hidden" name="success_url" value="">
+        <input type="hidden" name="error_url" value="">
+
+        <div class="field field-name-firstname required">
+            <label class="label" for="firstname"><span>Nombres</span></label>
+            <div class="control">
+                <input required type="text" id="firstname" name="firstname" value="" title="Nombres" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+            </div>
+        </div>
+        <div class="field field-name-lastname required">
+            <label class="label" for="lastname"><span>Apellidos</span></label>
+            <div class="control">
+                <input required type="text" id="lastname" name="lastname" value="" title="Apellidos" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+            </div>
+        </div>
+        <div class="field field-email required">
+            <label class="label" for="email"><span>Correo Electronico</span></label>
+            <div class="control">
+                <input required type="email" id="email" name="email" value="" title="Correo Electronico" class="input-email required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+            </div>
+        </div>
+        <div class="field field-city required">
+            <label class="label" for="city"><span>Ciudad</span></label>
+            <div class="control">
+                <select required id="city" name="city" title="Frecuencia" class="validate-select city required-entry" style="display: inline-block;" required="true" defaultvalue="0" aria-required="true">
+                    <option value="">Escoja una opción</option>
+                    <option value="bogota">Bogotá</option>
+                    <option value="medellin">Medellín</option>
+                    <option value="cali">Cali</option>
+                    <option value="otra">Otra Ciudad</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="fieldset create pet">
+        <legend class="legend"><span>Información de Mascota</span></legend><br>
+
+        <div class="field field-name-pet_name required">
+            <label class="label" for="pet_name"><span>Nombre de tu Mascota</span></label>
+            <div class="control">
+                <input required type="text" id="pet_name" name="pet_name" value="" title="Nombre Mascota" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+            </div>
+        </div>
+        <div class="field field-pet_type required">
+            <label class="label" for="pet_type"><span>Tipo de Mascota</span></label>
+            <div class="control">
+                <select required id="pet_type" name="pet_type" title="Tipo de Mascota" class="validate-select pet_type required-entry" style="display: inline-block;" required="true" defaultvalue="0" aria-required="true">
+                    <option value="">Escoja una opción</option>
+                    <option value="perro">Perro</option>
+                    <option value="gato">Gato</option>
+                    <option value="perro_gato">Perro y Gato</option>
+                </select>
+            </div>
+        </div>
+        <div class="field field-name-pet_breed required">
+            <label class="label" for="pet_breed"><span>Raza de tu Mascota</span></label>
+            <div class="control">
+                <input required type="text" id="pet_breed" name="pet_breed" value="" title="Raza Mascota" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+            </div>
+        </div>
+        <div class="field field-name-pet_birthday required">
+            <label class="label" for="pet_birthday"><span>Fecha de Nacimiento de tu Mascota</span></label>
+            <div class="control">
+                <input required type="date" style="background: #ffffff; background-clip: padding-box; border: 1px solid #c2c2c2; 
+                    border-radius: 1px; font-family: 'Montserrat' , sans-serif; font-size: 15px; 
+                    font-weight: normal; height: 32px; line-height: 1.42857143; padding: 0 9px; 
+                    vertical-align: baseline; width: 100%; box-sizing: border-box;" id="pet_birthday" name="pet_birthday" value="" title="Fecha de Nacimiento de Mascota" class="required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action save primary" title="Actualizar">
+                <span>Actualizar</span>
+            </button>
+        </div>
+    </div>
+</form>

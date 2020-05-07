@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Actualizar Datos</title>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title"> 
+            <action method="setPageTitle"> 
+                <argument translate="true" name="title" xsi:type="string">Actualiza tus Datos</argument> 
+            </action> 
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Ciudaddemascotas\Remarkety\Block\IndexBlock" name="remarkety_index" template="Ciudaddemascotas_Remarkety::form.phtml" />
+        </referenceContainer>
+    </body>
+</page>
