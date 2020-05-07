@@ -82,7 +82,7 @@ class Process extends \Magento\Framework\App\Action\Action
             $this->logger->addInfo("Ciudaddemascotas Remarkety", ["Customer" => json_encode($result)]);
         }
         
-        $this->messageManager->addSuccess(__('Form successfully submitted'));
+        //$this->messageManager->addSuccess(__('Form successfully submitted'));
         $this->messageManager->addSuccessMessage('Actualización realizada !');
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
         $resultRedirect->setUrl('/remarkety/form/index');
