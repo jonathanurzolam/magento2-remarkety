@@ -44,12 +44,13 @@ class Process extends \Magento\Framework\App\Action\Action
                 'customer'=>[
                     "guest"=> false,
                     "email"=> $_POST["email"],
-                    "first_name"=> $_POST["firstname"],
-                    "last_name"=> $_POST["lastname"],
+                    "first_name"=> ucwords(strtolower($_POST["firstname"])),
+                    "last_name"=> ucwords(strtolower($_POST["lastname"])),
                     "default_address"=>[
                         "city"=>$_POST["city"],
                     ],
-                    "pet_name_cdm"=>$_POST["pet_name"],
+                    "pet_birthday"=>$_POST["pet_birthday"],
+                    "pet_name_cdm"=>ucwords(strtolower($_POST["pet_name"])),
                     'tags'=>$external_tags
                 ]
             ];
@@ -59,9 +60,12 @@ class Process extends \Magento\Framework\App\Action\Action
             $customer_data=$customer['customers'][0];
             $hash=$customer_data['hash'];
             $new_tags=[];
-            $new_tags[0]=$_POST["pet_type"];
-            $new_tags[1]=$_POST["pet_breed"];
-            $new_tags[2]=$_POST["pet_birthday"];
+            if ($_POST["pet_type"]=='perro_gato') {
+                $new_tags=['perro', 'gato',ucwords(strtolower($_POST["pet_breed"]))];
+            } else {
+                $new_tags=[$_POST["pet_type"],ucwords(strtolower($_POST["pet_breed"]))];
+            }
+            
             $old_tags=$customer_data["tags"];
             $external_tags=array_merge($new_tags, $old_tags);
             $data=[
@@ -69,12 +73,13 @@ class Process extends \Magento\Framework\App\Action\Action
                     "guest"=> false,
                     "group"=>$customer_data['group'],
                     "email"=> $_POST["email"],
-                    "first_name"=> $_POST["firstname"],
-                    "last_name"=> $_POST["lastname"],
+                    "first_name"=> ucwords(strtolower($_POST["firstname"])),
+                    "last_name"=> ucwords(strtolower($_POST["lastname"])),
                     "default_address"=>[
                         "city"=>$_POST["city"],
                     ],
-                    "pet_name_cdm"=>$_POST["pet_name"],
+                    "pet_birthday"=>$_POST["pet_birthday"],
+                    "pet_name_cdm"=>ucwords(strtolower($_POST["pet_name"])),
                     'tags'=>$external_tags
                 ]
             ];

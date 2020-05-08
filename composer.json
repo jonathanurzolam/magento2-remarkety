@@ -2,7 +2,7 @@
     "name": "ciudaddemascotas/magento2-remarkety",
     "description": "Module to update customers from magento 2 to Remarkety",
     "type": "magento2-module",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "keywords":["Magento 2", "Remarkety", "Ciudaddemascotas.com"],
     "license": [
       "OSL-3.0",
