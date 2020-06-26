@@ -49,7 +49,7 @@ class Process extends \Magento\Framework\App\Action\Action
                     "default_address"=>[
                         "city"=>$_POST["city"],
                     ],
-                    "pet_birthday"=>$_POST["pet_birthday"],
+                    "pet_birthday_at"=>$_POST["pet_birthday"].'T00:00:00+00:00',
                     "pet_name_cdm"=>ucwords(strtolower($_POST["pet_name"])),
                     'tags'=>$external_tags
                 ]
@@ -78,7 +78,7 @@ class Process extends \Magento\Framework\App\Action\Action
                     "default_address"=>[
                         "city"=>$_POST["city"],
                     ],
-                    "pet_birthday"=>$_POST["pet_birthday"],
+                    "pet_birthday_at"=>$_POST["pet_birthday"].'T00:00:00+00:00',
                     "pet_name_cdm"=>ucwords(strtolower($_POST["pet_name"])),
                     'tags'=>$external_tags
                 ]
@@ -88,7 +88,7 @@ class Process extends \Magento\Framework\App\Action\Action
         }
         
         //$this->messageManager->addSuccess(__('Form successfully submitted'));
-        $this->messageManager->addSuccessMessage('Actualización realizada !');
+        $this->messageManager->addSuccessMessage('Gracias por actualizar tus datos.  Redime tu cupon: ACTUALIZACDM en tu próxima compra.');
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
         $resultRedirect->setUrl('/remarkety/form/index');
         return $resultRedirect;
